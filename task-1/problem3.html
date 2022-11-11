@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem3</title>
+    <script>
+        //----------------------code------------------------------------
+        let nums =[5,8,4];
+        let sum1 =0;
+        let sum2 =0;
+        
+        //for loop
+        for (let i =0 ; i< nums.length; i++) {
+            sum1 +=nums[i];
+        }
+        // console.log(sum1);
+        //while loop
+        let i = 0;
+        while( i < nums.length){
+            sum2 += nums[i];
+            i++
+        }
+        // console.log(sum2);
+
+        //function 
+         function modiArray (nums,len){
+            let sum=0;
+            for (let i =0 ; i< len; i++) {
+            sum +=nums[i];
+        }
+        return sum;
+        }
+        // console.log(modiArray(nums,nums.length));
+        document.write(`<span>input: <br>${nums.length}<br>${nums.join(" ")}<br>output:
+            <br>${sum1}<br>${sum2}<br>${modiArray(nums,nums.length)}<br></span>`);
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

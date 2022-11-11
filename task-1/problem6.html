@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem6</title>
+    <script>
+        //----------------------code------------------------------------
+        // used Euclidian algorithm
+        let a =prompt(`Enter first number:`)
+        let b =prompt(`Enter second number:`)
+        function gcd(a, b) {
+        if (a == 0)
+            return b;
+        return gcd(b % a, a);
+    }
+    document.write(`<span>input: <br>${a}<br>${b}<br>output:<br>${gcd(a,b)}</span>`)
+
+
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
