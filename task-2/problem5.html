@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem5</title>
+    <script>
+        //----------------------code------------------------------------
+        let array = [5, 3, 6, 1, 4];
+        document.write(`<span>input: <br>${array.join(" ")}<span><br>`)
+        function insertionSort(arr, n) { 
+            let i, key, j; 
+            for (i = 1; i < n; i++){ 
+            key = arr[i]; 
+            j = i - 1; 
+            while (j >= 0 && arr[j] > key){ 
+            arr[j + 1] = arr[j]; 
+            j = j - 1; 
+        } 
+        arr[j + 1] = key; 
+    } 
+    return arr;
+} 
+    console.log(array);
+    let n = array.length;
+    
+    let sortedArray = insertionSort(array,n);
+    console.log(sortedArray)
+    document.write(`<span> output:<br>${sortedArray.join(" ")}</span>`);
+        //----------------------------end---------------------------------------
+        //-----------------------------------time complexity------------------------
+
+
+        // time used is O(n^2) at worst case and aaverage case
+        //for best case O(n) when the array is aleardy sorted
+
+
+        //-----------------------------------end------------------------------------------
+
+        //---------------------------------------space complexity------------------------------------
+
+
+        //Space complexity is O(1) because an extra variable key is used 
+        //and the sort is done in same array
+
+
+
+        //-----------------------------------end------------------------------------------
+
+        //--------------------------------------------mechanism-------------------------------------
+
+
+        //We assume that the first element is already sorted then
+        //we select an unsorted element. If the unsorted card is greater than the card in hand,
+        //it is placed on the right otherwise, to the left. In the same way,
+        //other unsorted cards are taken and put in their right place.
+
+
+
+        //----------------------------------------end----------------------
+        //--------------------------stability------------------------------------------
+
+        // Stable sorts maintain the order of items that are deemed equal,
+        // whereas unstable sorts make no such guarantees.
+        //wich mean if the element in unsorted array repeated the sequences in sorted 
+        // array is the same in unsorted array.
+
+        // insertion sort is stable
+
+
+        //----------------------------------------------end--------------------------
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

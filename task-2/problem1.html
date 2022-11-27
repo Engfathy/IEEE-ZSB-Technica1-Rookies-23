@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem1</title>
+    <script>
+
+        //open page cancel the promot at first then open console 
+        //then refresh the page
+
+        //---------------------------code----------------------------------------
+        let num = Math.trunc(100+Math.random()*900);
+        let arr = num.toString().split("");
+        // console.log(`number is :`)
+        // console.log(num)
+        
+        let hit =0;
+        let miss =0;
+       
+        while(hit < 2 ){
+            let userInput= prompt(`Enter a 3-digit number: `).split("");
+            for(let i =0 ; i < 3; i++){
+                if(arr[i]===userInput[i]){
+                    hit++;
+                }else{
+                    miss++
+                }
+            }
+           console.log(`>>${userInput.join("")}`);
+           console.log(`${hit} hit ${miss} miss`);
+            hit =0;
+            miss=0;
+        }
+          
+        //-----------------------------------------end------------------------------------
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
