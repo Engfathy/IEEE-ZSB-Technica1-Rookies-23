@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem4</title>
+    <script>
+        //----------------------code------------------------------------
+        let input = prompt(`Enter list:`);
+        let list = input.split("");
+        let set =new Set(list);
+        console.log(set)
+        let res =[];
+        for (ele of set.keys()){
+            res.push(ele);
+        }
+        
+        
+        document.write(`<span>input: <br>${list.join(" ")}<br> output:<br>${res.join(" ")}</span>`);
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem3</title>
+    <script>
+        //----------------------code------------------------------------
+        let str = prompt(`Enter string:`);
+        let str2=str.split("");
+        let str1 ="hello".split("");
+        let temp =[];
+        let i =0 ;
+        let j =0 ;
+        while(i <str1.length && j <str2.length){
+            if(str1[i] === str2[j]){
+                temp[i]=str1[i];
+                i++;
+                j++;
+                
+            } else {
+                j++;
+            }
+        }
+        console.log(temp);
+         let res = false;
+       if(i === str1.length){
+        res =true;
+       }
+        console.log(res);
+        document.write(`<span>input: <br>${str}<br> output:<br>${res}</span>`);
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
