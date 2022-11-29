@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem5</title>
+    <script>
+        //----------------------code------------------------------------
+        let n = prompt(`Enter number of cities:`)
+        let m = prompt(`Enter number of cities have space station:`);
+        let stations = prompt(`Enter which cities have space station separated by " - ":`);
+        let station = stations.split("-");
+        console.log(station);
+        function findMaxDistance(numOfCities, station, n) {
+
+            var hasStation = Array(numOfCities + 1).fill(false);
+            for (var city = 0; city < n; city++) {
+                hasStation[station[city]] = true;
+            }
+            var dist = 0;
+            var maxDist = 1000000000;
+            for (var i = 0; i < n; i++) {
+                maxDist = Math.min(station[i], maxDist);
+            }
+            for (var city = 0; city < numOfCities; city++) {
+                if (hasStation[city] == true) {
+                    maxDist = Math.max((dist + 1) / 2, maxDist);
+                    dist = 0;
+                }
+                else
+                    dist += 1;
+            }
+            return Math.max(maxDist, dist);
+        }
+        console.log(findMaxDistance(n, station, m));
+
+        document.write(`<span>input:<br>${n} ${m}<br>${station.join(" ")}
+            <br>output:<br>${findMaxDistance(n, station, m)}</span>`);
+
+
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

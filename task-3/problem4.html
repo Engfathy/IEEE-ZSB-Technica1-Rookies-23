@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem4</title>
+    <script>
+        //----------------------code------------------------------------
+        let bookPages = prompt(`Enter book pages:`);
+        let target = prompt(`Enter page to reach:`);
+        let result;
+        let type;
+        if (target <= bookPages / 2) {
+            type = "from start";
+            if (target % 2 === 0) {
+                result = target / 2;
+            } else {
+                result = (target - 1) / 2;
+            }
+        } else {
+            type = "from end"
+            if (bookPages % 2 === 0) {
+                if (target % 2 === 0) {
+                    result = (bookPages - target) / 2;
+                } else {
+                    result = (bookPages - (target - 1)) / 2;
+                }
+            } else {
+                if (target % 2 === 0) {
+                    result = (bookPages - 1 - target) / 2;
+                } else {
+                    result = (bookPages - target) / 2;
+                }
+            }
+        }
+        console.log(result)
+
+
+        document.write(`<span>input: <br>${bookPages}<br>${target}<br> output:<br>${result} ${type}</span>`);
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
