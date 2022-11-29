@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem1</title>
+    <script>
+        //---------------------------------------code-----------------
+
+        let arr = [[11, 2, 4], [4, 5, 6], [10, 8, -12]];
+        let size = arr.length;
+        console.log(arr);
+        let primary = 0, secondary = 0;
+        for (let i = 0; i < arr.length; i++) {
+            primary += arr[i][i];
+            secondary += arr[i][arr.length - i - 1];
+        }
+        console.log(primary, secondary);
+        let result = Math.abs(primary - secondary);
+        console.log(result);
+        console.log(arr[0]);
+
+        document.write(`<span>input: <br>${size}<br>${arr[0].join(" ")}
+                        <br>${arr[1].join(" ")}<br>${arr[2].join(" ")}
+                        <br>output:<br>${result}</span>`);
+
+        //-----------------------------------------end------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

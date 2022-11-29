@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem3</title>
+    <script>
+        //----------------------code------------------------------------
+        let numberOfBottles = 3;
+        let propert = [[6, 6], [8, 10], [9, 12]];
+        let capacity = 0, volume = 0;
+        for (let i = 0; i < propert.length; i++) {
+            volume += propert[i][0];
+            capacity += propert[i][1];
+        }
+        let result = volume <= capacity ? "yes" : "No";
+        console.log(volume, capacity);
+        console.log(result);
+
+        document.write(`<span>input: <br>${numberOfBottles}<br>${propert[0].join(" ")}<br>
+            ${propert[1].join(" ")}<br>${propert[2].join(" ")}
+            <br> <br>output:<br>${result}</span>`);
+
+
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
