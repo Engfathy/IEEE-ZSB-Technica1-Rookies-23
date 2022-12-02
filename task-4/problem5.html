@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem5</title>
+    <script>
+        //----------------------code------------------------------------
+        let matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+        console.log(matrix);
+        function rotate(a) {
+            let n = a.length;
+            for (let i = 0; i < n / 2; i++) {
+                for (let j = i; j < n - i - 1; j++) {
+                    let tmp = a[i][j];
+                    a[i][j] = a[n - j - 1][i];
+                    a[n - j - 1][i] = a[n - i - 1][n - j - 1];
+                    a[n - i - 1][n - j - 1] = a[j][n - i - 1];
+                    a[j][n - i - 1] = tmp;
+                }
+            }
+            return a;
+        }
+        document.write(`<span>input:<br>${matrix.length}<br>`)
+        for (let i = 0; i < matrix.length; i++) {
+            document.write(`${matrix[i].join(" ")}<br>`)
+        }
+        document.write(`output:<br>`);
+        rotate(matrix)
+        for (let i = 0; i < matrix.length; i++) {
+            document.write(`${matrix[i].join(" ")}<br>`)
+        };
+        document.write(`</span>`)
+
+
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

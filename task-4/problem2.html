@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem2</title>
+    <script>
+        //--------------------------code------------------------------------------
+        let str1 = prompt(`Enter the string to search for`);
+        let str2 = prompt(`Enter the string to search in`);
+        let modiStr1 = str1.split("").reverse().join("");
+        console.log(modiStr1);
+        let rgex = new RegExp(modiStr1, "g");
+        let result = rgex.test(str2);
+        console.log(result);
+        document.write(`<span>Input:<br>${str1}<br>${str2}<br>Output:<br>${result}`)
+
+
+        //--------------------------------end----------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

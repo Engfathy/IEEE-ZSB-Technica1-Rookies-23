@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem6</title>
+    <script>
+        //----------------------code------------------------------------
+        let result = 2111;
+        let start = result;//
+        let ascending = 0;
+        let descending = 0;
+        let counter = 0;
+        while (result != 6174) {
+            if (result.toString().length < 4) {
+                ascending = result.toString().padStart(4, '0').split("").sort().join("");
+                console.log(ascending)
+                descending = result.toString().padStart(4, '0').split("").sort().reverse().join("");
+                console.log(descending)
+            } else {
+                ascending = result.toString().split("").sort().join("");
+                console.log(ascending)
+                descending = result.toString().split("").sort().reverse().join("");
+                console.log(descending)
+            }
+            if (ascending > descending) {
+                result = String(ascending - descending);
+                console.log(result);
+                counter++;
+            } else if (descending > ascending) {
+                result = String(descending - ascending);
+                console.log(result);
+
+                counter++;
+            }
+
+
+        }
+        console.log(counter);
+        document.write(`<span>input: <br>${start}
+                        <br>
+                        output:<br>${counter}</span>`);
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

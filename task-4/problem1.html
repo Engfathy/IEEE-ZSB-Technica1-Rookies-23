@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem1</title>
+    <script>
+        //---------------------------------------code-----------------
+        let arr = [1, 1, 1, 2, 2, 3];
+        let n = arr.length;
+        let numberOfFrequentElements = 2;
+        function mostFrequent(arr, n, k) {
+
+            let maxCount = 0;
+            let elementOfMaxCount = [];
+            for (let i = 0; i < n; i++) {
+                let count = 0;
+                for (let j = 0; j < n; j++) {
+                    if (arr[i] == arr[j]) {
+                        count++;
+                        console.log(count)
+                    }
+                }
+                if (k <= elementOfMaxCount.length) {
+                    break;
+                }
+                if (count > maxCount) {
+                    maxCount = count;
+                    elementOfMaxCount.push(arr[i]);
+                } else if (count >= 1 && count < maxCount) {
+                    elementOfMaxCount.push(arr[i]);
+                }
+            }
+            return elementOfMaxCount;
+        }
+        let set = new Set(mostFrequent(arr, n, numberOfFrequentElements));
+
+        let res = [];
+        for (ele of set.keys()) {
+            res.push(ele);
+        }
+
+
+        document.write(`<span>input: <br>${n} ${numberOfFrequentElements}
+                        <br>${arr.join(" ")}<br>
+                        output:<br>${res.join(" ")}</span>`);
+
+        //-----------------------------------------end------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

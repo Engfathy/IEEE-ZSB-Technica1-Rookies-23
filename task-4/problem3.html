@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem3</title>
+    <script>
+        //----------------------code------------------------------------
+        let arr = [2, 5, 3, 4, 5, 2];
+        let n = arr.length;
+        function minimumDistance(arr, n) {
+
+            let hmap = new Map();
+            let minDistance = 1000000000;
+            let previousIndex = 0, currentIndex = 0;
+            for (let i = 0; i < n; i++) {
+                if (hmap.has(arr[i])) {
+                    currentIndex = i;
+                    previousIndex = hmap.get(arr[i]);
+                    minDistance = Math.min((currentIndex -
+                        previousIndex), minDistance);
+                }
+                hmap.set(arr[i], i);
+            }
+            return (minDistance == 1000000000 ? -1 : minDistance);
+        }
+        document.write(`<span>Input:<br>${arr.join(" ")}<br>Output:<br>${minimumDistance(arr, n)}`);
+
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
