@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem7</title>
+    <script>
+        //----------------------code------------------------------------
+        let arr = [6, "eat", "tea", "tan", "ate", "nat", "bat"];
+        let temp = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (typeof arr[i] === "string") {
+                temp.push(arr[i].toString().split("").sort().join(""));
+            }
+        }
+        // to remove repeated element
+        let set = new Set(temp);
+        let words = [];
+        for (ele of set.keys()) {
+            words.push(ele);
+        }
+        console.log(words);
+        console.log(words.length);
+        let result = [...Array(words.length)].map(x => Array(0))
+        // compare words or keys with the original array
+        for (let i = 0; i < words.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+                if (words[i] == arr[j].toString().split("").sort().join("")) {
+                    result[i].push(arr[j]);
+                }
+            }
+        }
+        console.log(result);
+        // print output and input
+        document.write(`<span>input:<br>`)
+        for (let i = 0; i < arr.length; i++) {
+            document.write(`${arr[i]}<br>`)
+        }
+        document.write(`output:<br>`);
+        for (let i = 0; i < result.length; i++) {
+            document.write(`${result[i].join(" ")}<br>`)
+        };
+        document.write(`</span>`)
+
+
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
