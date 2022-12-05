@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem1</title>
+    <script>
+        //---------------------------------------code-----------------
+        let input = prompt(`please enter set of number separated by " - "`);
+        let arr = input.split("-");
+        let arr2 = arr.map((ele => { return Number(ele); }));
+        let N = arr.length;
+        console.log(arr2);
+        function sort(arr) {
+            var N = arr.length;
+            for (var i = Math.floor(N / 2) - 1; i >= 0; i--)
+                heapify(arr, N, i);
+        }
+        function heapify(arr, N, i) {
+            var largest = i;
+            var l = 2 * i + 1;
+            var r = 2 * i + 2;
+
+            if (l < N && arr[l] > arr[largest])
+                largest = l;
+
+            if (r < N && arr[r] > arr[largest])
+                largest = r;
+
+            if (largest != i) {
+                var swap = arr[i];
+                arr[i] = arr[largest];
+                arr[largest] = swap;
+
+                heapify(arr, N, largest);
+            }
+        }
+        function printArray(arr) {
+            var N = arr.length;
+            for (var i = 0; i < N; ++i)
+                document.write(arr[i] + " ");
+        }
+        function printArray(arr) {
+            var N = arr.length;
+            for (var i = 0; i < N; ++i)
+                document.write(arr[i] + " ");
+        }
+        document.write(`<span>input:<br>${arr2.join(" ")}<br>output:<span><br>`);
+        sort(arr2);
+        printArray(arr2, N);
+        //81-13-77-24-35-61-48-3-23-87-92-95-74-57-99-86-28-15-55-7-51
+        //-----------------------------------------end------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
