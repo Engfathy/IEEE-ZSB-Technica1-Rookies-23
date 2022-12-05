@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem4</title>
+    <script>
+        //----------------------code------------------------------------
+        let input = prompt(`please enter a number :`);
+        const Prime_Factors = (number) => {
+            const result_factors = [];
+            for (let i = 2; i * i <= number; i++) {
+                while (number % i === 0) {
+                    result_factors.push(i)
+                    number = Math.floor(number / i)
+                }
+            }
+            if (number > 1) {
+                result_factors.push(number);
+            }
+            return result_factors;
+        }
+        let result = Prime_Factors(input)
+        console.log(result);
+        document.write(`<span> input:<br>${input}<br>output:<br>${result.join("  -")}</span`)
+
+        //----------------------------end---------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

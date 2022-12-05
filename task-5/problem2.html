@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem2</title>
+    <script>
+        //--------------------------code------------------------------------------
+        let str = prompt(`please Enter the string:`);
+        let rgEx = /(\((\(\)|\[\]|\{\}|\s*)*\)|\[(\(\)|\[\]|\{\}|\s*)*\]|\{(\(\)|\[\]|\{\}|\s*)*\})/g;
+        // let rgEx = /^(\(|\[|\})$(\)||)/g
+        console.log(`input`);
+        console.log(`${str}`);
+        console.log(`output`);
+        let result = rgEx.test(str);
+        console.log(result)
+
+        document.write(`<span> input:<br>${str}<br>output:<br>${result}`)
+
+        //--------------------------------end----------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
