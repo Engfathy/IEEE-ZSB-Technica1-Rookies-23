@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const start = Date.now();
+        let n = prompt(`Enter number of days`);
+        let t = prompt(`Enter time to read in seconds`);
+        let ai = prompt(`enter time worked in days in seconds separated by" - "`);
+        let arr = ai.split("-");
+        console.log(arr);
+        let temp = 0;
+        let count = 0;
+        console.time('Execution Time');
+        for (let i = 0; i < n; i++) {
+            temp += (86400 - arr[i]);
+            console.log(temp);
+            count++;
+            if (temp == t) {
+                break;
+            }
+        }
+        //open console when adding input to see time excution
+        console.timeEnd('Execution Time');
+        console.log(count);
+        document.write(`<span>input:<br>${n} ${t}<br>${arr.join(" ")}<br>output:<br>${count}<br>`)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
