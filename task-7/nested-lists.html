@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem4</title>
+    <script>
+        //site support only python for this problem 
+        //--------------------------code------------------------------------------
+        let students_scores = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2],
+        ['Akriti', 41], ['Harsh', 39]];
+        let n = students_scores.length;
+        let arr = [];
+        //transfer to one dimension array
+        for (let i = 0; i < n; i++) {
+            arr[i] = students_scores[i].flat().join(":");
+        }
+
+        console.log(arr);
+        // sort them Ascending
+        arr.sort(function (a, b) {
+            return (Number(a.match(/(\d+.\d+|\d+)/g).join(""))) -
+                (Number(b.match(/(\d+.\d+|\d+)/g).join("")));
+        });
+
+        //array to hold the second lowest grade
+        let slg = arr[1].match(/(\d+.\d+|\d+)/g).join("");
+        let spArray = [arr[1]];
+        for (let i = 2; i < arr.length; i++) {
+            if (slg == arr[i].match(/(\d+.\d+|\d+)/g).join("")) {
+                spArray.push(arr[i]);
+            }
+        }
+        console.log(spArray)
+        // sort it alphapetically
+        spArray = spArray.sort();
+
+        console.log(arr);
+        // print in console
+        console.log("input:");
+        for (let i = 0; i < n; i++) {
+            console.log(`${arr[i].replace(/:(\d+.\d+|\d+)/g, '')}`);
+            console.log(`${arr[i].match(/(\d+.\d+|\d+)/g).join("")}`);
+        };
+        console.log(`output:`);
+        for (let i = 0; i < spArray.length; i++) {
+            console.log(`${spArray[i].replace(/:(\d+.\d+|\d+)/g, '')}`);
+        }
+
+
+        //--------------------------------end----------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

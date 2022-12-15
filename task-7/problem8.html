@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // in code force site i gave me compile error but it works here
+        //and it didn't descripe the structure of function he want
+        let input = prompt(`Enter Ternary numeric notation `);
+        function Ternarynumeric(input) {
+            console.log(input.replaceAll("--", "2").replaceAll("-.", "1").replaceAll(".", "0"))
+            return input.replaceAll("--", "2").replaceAll("-.", "1").replaceAll(".", "0");
+        }
+        let result = Ternarynumeric(input);
+        document.write(`<span> input:<br>${input}<br>output:<br>${result}</span>`);
+
+    </script>
+</body>
+
+</html>
