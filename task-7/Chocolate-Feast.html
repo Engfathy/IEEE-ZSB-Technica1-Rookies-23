@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function chocolateFeast(n, c, m) {
+            let count = 0;
+            count += (n / c);
+            let wrapper = (n / c);
+            let value = Math.floor(wrapper / m)
+            while (wrapper >= m) {
+                count += value;
+                wrapper -= (value * m);
+            }
+            console.log(count);
+        }
+        // change value you want here
+        chocolateFeast(12, 4, 4);
+    </script>
+</body>
+
+</html>
